@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Orin.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32, 32 )
+
+[node name="Main" type="Node"]
+
+[node name="Orin" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 320, 368 )
+
+[node name="Ball" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 320, 240 )
+_sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 320, 416 )
+scale = Vector2( 10, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
+
+shape = SubResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="." index="3"]
+
+[node name="Card" parent="Node2D" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 208 )
+
+[node name="Card2" parent="Node2D" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 360, 208 )
+
+[node name="Card3" parent="Node2D" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 280, 208 )
+
+[node name="Card4" parent="Node2D" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 240, 168 )
+
+[node name="Card5" parent="Node2D" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 400, 168 )
+
+[node name="Card6" parent="Node2D" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 400, 128 )
+
+[node name="Card7" parent="Node2D" index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 240, 128 )
+
+[node name="Card8" parent="Node2D" index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 280, 88 )
+
+[node name="Card9" parent="Node2D" index="8" instance=ExtResource( 4 )]
+
+position = Vector2( 320, 88 )
+
+[node name="Card10" parent="Node2D" index="9" instance=ExtResource( 4 )]
+
+position = Vector2( 360, 88 )
+
+[node name="Card11" parent="Node2D" index="10" instance=ExtResource( 4 )]
+
+position = Vector2( 440, 128 )
+
+[node name="Card12" parent="Node2D" index="11" instance=ExtResource( 4 )]
+
+position = Vector2( 480, 168 )
+
+[node name="Card13" parent="Node2D" index="12" instance=ExtResource( 4 )]
+
+position = Vector2( 200, 128 )
+
+[node name="Card14" parent="Node2D" index="13" instance=ExtResource( 4 )]
+
+position = Vector2( 160, 168 )
+
+[node name="Card15" parent="Node2D" index="14" instance=ExtResource( 4 )]
+
+position = Vector2( 120, 128 )
+
+[node name="Card16" parent="Node2D" index="15" instance=ExtResource( 4 )]
+
+position = Vector2( 80, 168 )
+
+[node name="Card17" parent="Node2D" index="16" instance=ExtResource( 4 )]
+
+position = Vector2( 520, 128 )
+
+[node name="Card18" parent="Node2D" index="17" instance=ExtResource( 4 )]
+
+position = Vector2( 560, 168 )
+
+
