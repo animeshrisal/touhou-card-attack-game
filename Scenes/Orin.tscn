@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Scripts/Orin.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Orin/Orin1.png" type="Texture" id=2]
@@ -14,6 +14,37 @@
 [ext_resource path="res://Sprites/Orin/Orin11.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Orin/Orin12.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Orin/Orin13.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Orin/OrinRun1.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Orin/OrinRun2.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Orin/OrinRun3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Orin/OrinRun4.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Orin/OrinRun5.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Orin/OrinRun6.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Orin/OrinRun7.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Orin/OrinRun8.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Orin/OrinRun9.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Orin/OrinRun10.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Orin/OrinRun11.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Orin/OrinRun12.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Orin/OrinSpin1.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Orin/OrinSpin2.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Orin/OrinSpin3.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Orin/OrinSpin4.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Orin/OrinSpin5.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Orin/OrinSpin6.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Orin/OrinSpin7.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Orin/OrinSpin8.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Orin/OrinSpin9.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Orin/SpinEffect1.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Orin/SpinEffect2.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Orin/SpinEffect3.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Orin/SpinEffect4.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Orin/SpinEffect5.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Orin/SpinEffect6.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Orin/SpinEffect7.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Orin/SpinEffect8.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Orin/SpinEffect9.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Orin/SpinEffect10.png" type="Texture" id=45]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -22,22 +53,46 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "spin",
+"speed": 12.0
 } ]
-
-[sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
-extents = Vector2( 6.53301, 9.06751 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 2.70041, 0.8871 )
+extents = Vector2( 6.53301, 9.06751 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 2.70041, 0.8871 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13.3421, 35.8508 )
+
+[sub_resource type="SpriteFrames" id=5]
+
+animations = [ {
+"frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "spin",
+"speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "notspin",
+"speed": 5.0
+} ]
 
 [node name="Orin" type="KinematicBody2D" index="0"]
 
@@ -52,11 +107,13 @@ script = ExtResource( 1 )
 position = Vector2( 0, -10 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 10
 playing = true
 
 [node name="OrinArea" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
+modulate = Color( 1, 0, 0, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -64,17 +121,18 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrinArea" index="0"]
 
 position = Vector2( -2.50689, -5.45247 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="OrinCollision" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -2.70761, -7.09965 )
 scale = Vector2( 0.410681, 1 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 disabled = true
 _sections_unfolded = [ "Visibility" ]
 
@@ -92,8 +150,16 @@ audio_bus_name = "Master"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
 
-position = Vector2( -1.88937, -4.53448 )
-shape = SubResource( 3 )
+position = Vector2( -1.14033, 14.3664 )
+scale = Vector2( 1.50958, 1.12903 )
+shape = SubResource( 4 )
+
+[node name="Spin" type="AnimatedSprite" parent="." index="4"]
+
+position = Vector2( -2.35558, -10.9276 )
+frames = SubResource( 5 )
+animation = "notspin"
+_sections_unfolded = [ "Visibility" ]
 
 [connection signal="body_entered" from="OrinArea" to="." method="_on_OrinArea_body_entered"]
 

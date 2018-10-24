@@ -14,7 +14,10 @@ extents = Vector2( 32, 32 )
 
 [node name="Orin" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 320, 368 )
+position = Vector2( 320.4, 378.006 )
+z_index = 4
+z_as_relative = false
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Ball" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -46,6 +49,8 @@ texture = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="Node2D" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
 
 [node name="Card" parent="Node2D" index="0" instance=ExtResource( 4 )]
 

@@ -6,15 +6,20 @@
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
-radius = 10.3279
+radius = 20.419
 
 [node name="Ball" type="KinematicBody2D"]
 
+position = Vector2( -0.0967522, -0.613045 )
+scale = Vector2( 0.494141, 0.495807 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
