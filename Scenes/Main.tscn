@@ -18,8 +18,6 @@ extents = Vector2( 32, 32 )
 
 [node name="TransportGroup" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="Transport1" parent="TransportGroup" index="0" groups=[
 "Transport",
 ] instance=ExtResource( 1 )]
@@ -31,6 +29,36 @@ position = Vector2( 104, 200 )
 ] instance=ExtResource( 1 )]
 
 position = Vector2( 568, 200 )
+
+[node name="Transport9" parent="TransportGroup" index="2" groups=[
+"Transport",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 176, 200 )
+
+[node name="Transport10" parent="TransportGroup" index="3" groups=[
+"Transport",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 240, 200 )
+
+[node name="Transport11" parent="TransportGroup" index="4" groups=[
+"Transport",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 328, 200 )
+
+[node name="Transport12" parent="TransportGroup" index="5" groups=[
+"Transport",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 392, 200 )
+
+[node name="Transport13" parent="TransportGroup" index="6" groups=[
+"Transport",
+] instance=ExtResource( 1 )]
+
+position = Vector2( 448, 200 )
 
 [node name="Orin" parent="." index="1" instance=ExtResource( 2 )]
 
@@ -79,7 +107,7 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="CardGroup" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
+visible = false
 
 [node name="Card2" parent="CardGroup" index="0" instance=ExtResource( 6 )]
 
@@ -167,7 +195,7 @@ position = Vector2( 480, 88 )
 
 [node name="CircleBlock" parent="." index="6" instance=ExtResource( 7 )]
 
-position = Vector2( 352, 200 )
+position = Vector2( 488, 192 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
 
