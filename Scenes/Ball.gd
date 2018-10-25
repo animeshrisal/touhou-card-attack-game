@@ -5,8 +5,8 @@ extends KinematicBody2D
 # var b = "textvar"
 var motion = Vector2(200, 200)
 const TYPE = "Ball"
-const HEIGHT = 400
-const WIDTH = 640
+const HEIGHT = 420
+const WIDTH = 680
 const GRAVITY = 5
 
 
@@ -18,11 +18,11 @@ func _ready():
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
-	if position.y > HEIGHT - 8 or position.y < 8:
-		position.y = 8
+	if position.y > HEIGHT - 8 or position.y < 44:
+		position.y = 44
 		motion.y = -motion.y
 		
-	if position.x < 8 or position.x > WIDTH - 8:
+	if position.x < 42 or position.x > WIDTH - 42:
 		motion.x = -motion.x
 		
 	if is_on_floor():

@@ -62,7 +62,7 @@ animations = [ {
 "frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "spin",
-"speed": 12.0
+"speed": 18.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -86,7 +86,7 @@ animations = [ {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
 "loop": true,
 "name": "spin",
-"speed": 12.0
+"speed": 18.0
 }, {
 "frames": [  ],
 "loop": true,
@@ -107,7 +107,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -10 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 10
+frame = 12
 playing = true
 
 [node name="OrinArea" type="Area2D" parent="." index="1"]

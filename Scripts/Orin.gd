@@ -4,8 +4,8 @@ extends KinematicBody2D
 # var a = 2
 # var b = "textvar"
 var motion = Vector2()
-const HEIGHT = 400
-const WIDTH = 640
+const HEIGHT = 420
+const WIDTH = 680
 var new_anim = ""
 var current_anim = ""
 var spinning = false
@@ -19,12 +19,12 @@ func _ready():
 func _process(delta):
 	motion.x = 4
 	
-	if Input.is_action_pressed("ui_left") and position.x > 16:
+	if Input.is_action_pressed("ui_left") and position.x > 48:
 		position.x -= motion.x
 		$AnimatedSprite.flip_h = false
 		new_anim = "run"
 		
-	elif Input.is_action_pressed("ui_right") and position.x < WIDTH-16:
+	elif Input.is_action_pressed("ui_right") and position.x < WIDTH-48:
 		position.x += motion.x
 		$AnimatedSprite.flip_h = true
 		new_anim = "run"
@@ -32,7 +32,7 @@ func _process(delta):
 	else:
 		new_anim = "default"
 		
-	if Input.is_action_just_pressed("bullet"):
+	if Input.is_action_just_pressed("spin"):
 		spinning = true
 		
 		
@@ -53,7 +53,7 @@ func _process(delta):
 		$OrinArea/CollisionShape2D.disabled = false
 		$OrinCollision.disabled = false
 		
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("bullet"):
 		var bullet = preload("res://Scenes/Bullet.tscn").instance()
 		bullet.position = get_position()
 		bullet.position.y -= 20
