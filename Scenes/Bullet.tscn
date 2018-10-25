@@ -10,7 +10,7 @@ extents = Vector2( 4.39438, 8.20732 )
 
 [node name="Bullet" type="Area2D"]
 
-scale = Vector2( 2.38782, 2.00757 )
+scale = Vector2( 1.61258, 1.28314 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

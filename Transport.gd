@@ -21,8 +21,6 @@ func _on_Transport_body_entered(body):
 		var motion_x = randf() * 2 - 1
 		var motion_y = randf() * 2 - 1
 		body.motion = Vector2(motion_x, motion_y).normalized() * 400
-		print(body.motion)
-		print(motion_x)
 		body.position = transport_group[selected_transport].position
 
 

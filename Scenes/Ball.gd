@@ -7,7 +7,7 @@ var motion = Vector2(200, 200)
 const TYPE = "Ball"
 const HEIGHT = 420
 const WIDTH = 680
-const GRAVITY = 5
+const GRAVITY = 8
 
 
 func _ready():

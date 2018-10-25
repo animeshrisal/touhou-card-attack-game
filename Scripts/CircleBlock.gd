@@ -18,5 +18,9 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.get("TYPE") == "Ball":
 		var direction = body.get_position() - get_position()
-		var motion = direction.normalized() * 400
-		body.motion = motion 
+		var motion = direction.normalized()
+		body.motion = motion * 200
+
+
+
+	

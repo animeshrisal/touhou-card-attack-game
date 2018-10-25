@@ -13,7 +13,7 @@ radius = 8.0
 custom_solver_bias = 0.0
 radius = 10.1155
 
-[node name="CircleBlock" type="StaticBody2D" index="0"]
+[node name="CircleBlock" type="StaticBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -37,6 +37,7 @@ shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
