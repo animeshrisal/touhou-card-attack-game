@@ -41,8 +41,6 @@ func _process(delta):
 	if current_animation == "default":
 		ball_entered = false
 		ball_generated = false
-		
-	print(selected_transport)
 
 	if current_animation != new_animation:
 		current_animation = new_animation

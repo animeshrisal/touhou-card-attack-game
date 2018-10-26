@@ -1,6 +1,7 @@
 extends Area2D
 
 const SPEED = Vector2(0, -20)
+const TYPE = "BULLET"
 
 func _ready():
 	# Called when the node is added to the scene for the first time.

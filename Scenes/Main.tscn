@@ -1,78 +1,61 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scenes/Transport.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Orin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/case.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/CircleBlock.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Pause.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Background.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Transport.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Orin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/case.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Card.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/CircleBlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Pause.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/EnemyBullet.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[node name="Main" type="Node" index="0"]
+[node name="Main" type="Node"]
 
-[node name="TransportGroup" type="Node2D" parent="." index="0"]
+script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 344, 215 )
+scale = Vector2( 1, 0.995238 )
+texture = ExtResource( 2 )
+
+[node name="TransportGroup" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
 
 [node name="Transport1" parent="TransportGroup" index="0" groups=[
 "Transport",
-] instance=ExtResource( 1 )]
+] instance=ExtResource( 3 )]
 
-position = Vector2( 104, 200 )
+position = Vector2( 56, 192 )
 
 [node name="Transport8" parent="TransportGroup" index="1" groups=[
 "Transport",
-] instance=ExtResource( 1 )]
+] instance=ExtResource( 3 )]
 
-position = Vector2( 568, 200 )
+position = Vector2( 616, 192 )
 
-[node name="Transport9" parent="TransportGroup" index="2" groups=[
-"Transport",
-] instance=ExtResource( 1 )]
-
-position = Vector2( 176, 200 )
-
-[node name="Transport10" parent="TransportGroup" index="3" groups=[
-"Transport",
-] instance=ExtResource( 1 )]
-
-position = Vector2( 240, 200 )
-
-[node name="Transport11" parent="TransportGroup" index="4" groups=[
-"Transport",
-] instance=ExtResource( 1 )]
-
-position = Vector2( 328, 200 )
-
-[node name="Transport12" parent="TransportGroup" index="5" groups=[
-"Transport",
-] instance=ExtResource( 1 )]
-
-position = Vector2( 392, 200 )
-
-[node name="Transport13" parent="TransportGroup" index="6" groups=[
-"Transport",
-] instance=ExtResource( 1 )]
-
-position = Vector2( 448, 200 )
-
-[node name="Orin" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Orin" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 330.42, 382.606 )
 z_index = 4
 z_as_relative = false
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Ball" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Ball" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 96, 288 )
 _sections_unfolded = [ "Angular", "Applied Forces", "Collision", "Linear", "Transform" ]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( 340.959, 402.495 )
@@ -90,114 +73,174 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D" index="0"]
 
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="4"]
+[node name="Sprite" type="Sprite" parent="." index="5"]
 
-position = Vector2( 339.375, 208.858 )
-scale = Vector2( 1.00184, 1.00408 )
+position = Vector2( 341.687, 208.572 )
+scale = Vector2( 1.01857, 1.0068 )
 z_index = 6
 z_as_relative = false
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="CardGroup" type="Node2D" parent="." index="5"]
+[node name="CardGroup" type="Node2D" parent="." index="6"]
 
-visible = false
+editor/display_folded = true
 
-[node name="Card2" parent="CardGroup" index="0" instance=ExtResource( 6 )]
+[node name="Card2" parent="CardGroup" index="0" instance=ExtResource( 8 )]
 
-position = Vector2( 152, 248 )
+position = Vector2( 153.25, 178.375 )
 
-[node name="Card3" parent="CardGroup" index="1" instance=ExtResource( 6 )]
+[node name="Card27" parent="CardGroup" index="1" instance=ExtResource( 8 )]
 
-position = Vector2( 224, 88 )
+position = Vector2( 281.25, 274.375 )
 
-[node name="Card4" parent="CardGroup" index="2" instance=ExtResource( 6 )]
+[node name="Card3" parent="CardGroup" index="2" instance=ExtResource( 8 )]
 
-position = Vector2( 152, 168 )
+position = Vector2( 185.25, 114.375 )
 
-[node name="Card5" parent="CardGroup" index="3" instance=ExtResource( 6 )]
+[node name="Card28" parent="CardGroup" index="3" instance=ExtResource( 8 )]
 
-position = Vector2( 152, 88 )
+position = Vector2( 313.25, 210.375 )
 
-[node name="Card6" parent="CardGroup" index="4" instance=ExtResource( 6 )]
+[node name="Card4" parent="CardGroup" index="4" instance=ExtResource( 8 )]
 
-position = Vector2( 224, 168 )
+position = Vector2( 153.25, 146.375 )
 
-[node name="Card7" parent="CardGroup" index="5" instance=ExtResource( 6 )]
+[node name="Card26" parent="CardGroup" index="5" instance=ExtResource( 8 )]
 
-position = Vector2( 224, 248 )
+position = Vector2( 281.25, 242.375 )
 
-[node name="Card8" parent="CardGroup" index="6" instance=ExtResource( 6 )]
+[node name="Card5" parent="CardGroup" index="6" instance=ExtResource( 8 )]
 
-position = Vector2( 288, 248 )
+position = Vector2( 153.25, 114.375 )
 
-[node name="Card9" parent="CardGroup" index="7" instance=ExtResource( 6 )]
+[node name="Card29" parent="CardGroup" index="7" instance=ExtResource( 8 )]
 
-position = Vector2( 288, 168 )
+position = Vector2( 281.25, 210.375 )
 
-[node name="Card10" parent="CardGroup" index="8" instance=ExtResource( 6 )]
+[node name="Card6" parent="CardGroup" index="8" instance=ExtResource( 8 )]
 
-position = Vector2( 352, 248 )
+position = Vector2( 185.25, 146.375 )
 
-[node name="Card11" parent="CardGroup" index="9" instance=ExtResource( 6 )]
+[node name="Card30" parent="CardGroup" index="9" instance=ExtResource( 8 )]
 
-position = Vector2( 288, 88 )
+position = Vector2( 313.25, 242.375 )
 
-[node name="Card12" parent="CardGroup" index="10" instance=ExtResource( 6 )]
+[node name="Card7" parent="CardGroup" index="10" instance=ExtResource( 8 )]
 
-position = Vector2( 352, 168 )
+position = Vector2( 185.25, 178.375 )
 
-[node name="Card13" parent="CardGroup" index="11" instance=ExtResource( 6 )]
+[node name="Card31" parent="CardGroup" index="11" instance=ExtResource( 8 )]
 
-position = Vector2( 352, 88 )
+position = Vector2( 313.25, 274.375 )
 
-[node name="Card14" parent="CardGroup" index="12" instance=ExtResource( 6 )]
+[node name="Card8" parent="CardGroup" index="12" instance=ExtResource( 8 )]
 
-position = Vector2( 480, 168 )
+position = Vector2( 217.25, 178.375 )
 
-[node name="Card19" parent="CardGroup" index="13" instance=ExtResource( 6 )]
+[node name="Card32" parent="CardGroup" index="13" instance=ExtResource( 8 )]
 
-position = Vector2( 480, 248 )
+position = Vector2( 345.25, 274.375 )
 
-[node name="Card20" parent="CardGroup" index="14" instance=ExtResource( 6 )]
+[node name="Card9" parent="CardGroup" index="14" instance=ExtResource( 8 )]
 
-position = Vector2( 536, 248 )
+position = Vector2( 217.25, 146.375 )
 
-[node name="Card21" parent="CardGroup" index="15" instance=ExtResource( 6 )]
+[node name="Card33" parent="CardGroup" index="15" instance=ExtResource( 8 )]
 
-position = Vector2( 536, 168 )
+position = Vector2( 345.25, 242.375 )
 
-[node name="Card22" parent="CardGroup" index="16" instance=ExtResource( 6 )]
+[node name="Card10" parent="CardGroup" index="16" instance=ExtResource( 8 )]
 
-position = Vector2( 536, 88 )
+position = Vector2( 249.25, 178.375 )
 
-[node name="Card15" parent="CardGroup" index="17" instance=ExtResource( 6 )]
+[node name="Card34" parent="CardGroup" index="17" instance=ExtResource( 8 )]
 
-position = Vector2( 416, 88 )
+position = Vector2( 377.25, 274.375 )
 
-[node name="Card16" parent="CardGroup" index="18" instance=ExtResource( 6 )]
+[node name="Card11" parent="CardGroup" index="18" instance=ExtResource( 8 )]
 
-position = Vector2( 416, 168 )
+position = Vector2( 217.25, 114.375 )
 
-[node name="Card17" parent="CardGroup" index="19" instance=ExtResource( 6 )]
+[node name="Card35" parent="CardGroup" index="19" instance=ExtResource( 8 )]
 
-position = Vector2( 416, 248 )
+position = Vector2( 345.25, 210.375 )
 
-[node name="Card18" parent="CardGroup" index="20" instance=ExtResource( 6 )]
+[node name="Card12" parent="CardGroup" index="20" instance=ExtResource( 8 )]
 
-position = Vector2( 480, 88 )
+position = Vector2( 249.25, 146.375 )
 
-[node name="CircleBlock" parent="." index="6" instance=ExtResource( 7 )]
+[node name="Card36" parent="CardGroup" index="21" instance=ExtResource( 8 )]
 
-position = Vector2( 488, 192 )
+position = Vector2( 377.25, 242.375 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
+[node name="Card13" parent="CardGroup" index="22" instance=ExtResource( 8 )]
+
+position = Vector2( 249.25, 114.375 )
+
+[node name="Card37" parent="CardGroup" index="23" instance=ExtResource( 8 )]
+
+position = Vector2( 377.25, 210.375 )
+
+[node name="Card14" parent="CardGroup" index="24" instance=ExtResource( 8 )]
+
+position = Vector2( 505.25, 114.375 )
+
+[node name="Card19" parent="CardGroup" index="25" instance=ExtResource( 8 )]
+
+position = Vector2( 473.25, 146.375 )
+
+[node name="Card20" parent="CardGroup" index="26" instance=ExtResource( 8 )]
+
+position = Vector2( 409.25, 178.375 )
+
+[node name="Card23" parent="CardGroup" index="27" instance=ExtResource( 8 )]
+
+position = Vector2( 441.25, 178.375 )
+
+[node name="Card24" parent="CardGroup" index="28" instance=ExtResource( 8 )]
+
+position = Vector2( 473.25, 178.375 )
+
+[node name="Card25" parent="CardGroup" index="29" instance=ExtResource( 8 )]
+
+position = Vector2( 505.25, 178.375 )
+
+[node name="Card21" parent="CardGroup" index="30" instance=ExtResource( 8 )]
+
+position = Vector2( 505.25, 146.375 )
+
+[node name="Card22" parent="CardGroup" index="31" instance=ExtResource( 8 )]
+
+position = Vector2( 473.25, 114.375 )
+
+[node name="Card15" parent="CardGroup" index="32" instance=ExtResource( 8 )]
+
+position = Vector2( 409.25, 114.375 )
+
+[node name="Card16" parent="CardGroup" index="33" instance=ExtResource( 8 )]
+
+position = Vector2( 409.25, 146.375 )
+
+[node name="Card17" parent="CardGroup" index="34" instance=ExtResource( 8 )]
+
+position = Vector2( 441.25, 146.375 )
+
+[node name="Card18" parent="CardGroup" index="35" instance=ExtResource( 8 )]
+
+position = Vector2( 441.25, 114.375 )
+
+[node name="CircleBlock" parent="." index="7" instance=ExtResource( 9 )]
+
+position = Vector2( 328, 144 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="8"]
 
 layer = 100
 offset = Vector2( 0, 0 )
@@ -219,7 +262,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 _sections_unfolded = [ "Pause" ]
 
 [node name="Black Overlay" type="ColorRect" parent="CanvasLayer/Pause" index="0"]
@@ -237,5 +280,18 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 0.33149 )
+
+[node name="EnemyBullet" parent="." index="9" instance=ExtResource( 11 )]
+
+position = Vector2( 112, 56 )
+
+[node name="EnemyBullet Timer" type="Timer" parent="." index="10"]
+
+process_mode = 1
+wait_time = 0.5
+one_shot = false
+autostart = true
+
+[connection signal="timeout" from="EnemyBullet Timer" to="." method="_on_EnemyBullet_Timer_timeout"]
 
 

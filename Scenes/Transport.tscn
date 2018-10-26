@@ -33,7 +33,7 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[node name="Transport" type="Area2D" index="0"]
+[node name="Transport" type="Area2D"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

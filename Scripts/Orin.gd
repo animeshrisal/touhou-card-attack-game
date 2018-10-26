@@ -73,3 +73,9 @@ func _on_AttackArea_body_entered(body):
 func _on_OrinArea_body_entered(body):
 	if body.get("TYPE") == "Ball":
 		queue_free()
+
+
+func _on_OrinArea_area_entered(area):
+	print(area.get("current_animation"))
+	if area.get("TYPE") == "ENEMY_BULLET" and not area.get("current_animation") == "explosion":
+		queue_free()
